@@ -1,0 +1,29 @@
+---
+title:  "Serie 1"
+author: "Christoph Schiessl"
+date: "24.09.16"
+output: html_document
+---
+
+Knitr Test
+=========
+
+We test some Knitr stuff like code 
+
+```{r sd}
+x<- rlnorm(1000, meanlog=1, sdlog=0.25)
+```
+and figures
+
+```{r}
+hist(x)
+```
+
+On a logarithmic scale it looks like a normal distribution as expected.
+```{r}
+hist(log(x))
+```
+
+We have mean `r mean(x)` and variance `r var(x)`. The expected values would be `r exp(1+0.25^2/2)` and `r (exp(0.25^2)-1)*exp(2*1+0.25^2)`.
+
+
